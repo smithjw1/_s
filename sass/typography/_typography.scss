@@ -9,6 +9,59 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?2j17ub');
+    src:    url('fonts/icomoon.eot?2j17ub#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?2j17ub') format('truetype'),
+        url('fonts/icomoon.woff?2j17ub') format('woff'),
+        url('fonts/icomoon.svg?2j17ub#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-down:before {
+    content: "\e907";
+}
+.icon-chevron-left:before {
+    content: "\e900";
+}
+.icon-close:before {
+    content: "\e901";
+}
+.icon-search:before {
+    content: "\e902";
+}
+.icon-instagram:before {
+    content: "\e903";
+}
+.icon-facebook:before {
+    content: "\e904";
+}
+.icon-twitter:before {
+    content: "\e905";
+}
+.icon-pinterest:before {
+    content: "\e906";
+}
+
+
+
 @import "headings";
 
 @import "copy";

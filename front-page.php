@@ -26,9 +26,23 @@ get_header(); ?>
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-
 			endwhile; // End of the loop.
 			?>
+      <div class="subscribe">
+
+      </div>
+
+      <div class="recent-posts">
+        
+      </div>
+
+      <div class="instafeed">
+
+      </div>
+      <div class="authors">
+        <h2><?php echo rwmb_meta( 'author_intro_headline'); ?></h2>
+        <?php echo apply_filters('the_content', rwmb_meta( 'author_intro_content')); ?>
+      </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
