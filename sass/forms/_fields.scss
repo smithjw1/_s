@@ -16,8 +16,13 @@ input[type="color"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
-
+  display: block;
+  width: 100%;
+  height: 38px;
+  margin-bottom: 10px;
+  @include font-size(0.7);
+  line-height: 1.428571429;
+  vertical-align: middle;
 	&:focus {
 		color: $color__text-input-focus;
 	}
@@ -41,11 +46,7 @@ input[type="week"],
 input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"] {
-	padding: 3px;
-}
-
+input[type="color"],
 textarea {
-	padding-left: 3px;
-	width: 100%;
+	padding: 8px 12px;
 }

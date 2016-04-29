@@ -5,6 +5,10 @@ footer#colophon {
   padding: 60px 0;
   width: 60%;
   margin-left: 40%;
+  @include breakpoint(tablet) {
+    width: 100%;
+    margin-left: 0;
+  }
   ul#social {
     list-style: none;
     width: 229px;
@@ -58,5 +62,12 @@ footer#colophon {
     clear: both;
     margin-top: 3.5em;
     @include font-size(0.7);
+  }
+}
+
+body.home, body.blog {
+  footer#colophon {
+    width: 100%;
+    margin-left: 0;
   }
 }

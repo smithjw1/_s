@@ -1,7 +1,7 @@
 <?php
 
-add_filter( 'rwmb_meta_boxes', 'ptp_meta_boxes' );
-function ptp_meta_boxes( $meta_boxes ) {
+add_filter( 'rwmb_meta_boxes', 'ptp_home_meta_boxes' );
+function ptp_home_meta_boxes( $meta_boxes ) {
   $meta_boxes[] = array(
     'title'      => __( 'Author Intro', 'piketopine' ),
     'post_types' => 'page',

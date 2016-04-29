@@ -7,6 +7,10 @@ header#masthead {
   .site-branding {
     width: 200px;
     float: left;
+    @include breakpoint(tablet) {
+      float: none;
+      margin: 0 auto;
+    }
   }
 
   a.search:before {
@@ -24,6 +28,10 @@ header#masthead {
       opacity: 0.8;
       text-decoration: none;
     }
+    @include breakpoint(tablet) {
+      color: #FFF;
+      margin-top: -40px;
+    }
   }
   a.back {
     color: #525252;
@@ -37,6 +45,12 @@ header#masthead {
       font-size: 0.8em;
       top: 1px;
     }
+    @include breakpoint(tablet) {
+      margin-left: 0;
+      position: relative;
+      top: 240px;
+    }
+    @include breakpoint(mobile) {top: 190px}
   }
 }
 

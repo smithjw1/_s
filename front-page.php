@@ -11,7 +11,7 @@
  *
  * @package _s
  */
-
+delete_transient('ptp_back_link');
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -33,12 +33,11 @@ get_header(); ?>
       </div>
 
       <div class="recent-posts">
-        
-      </div>
-
-      <div class="instafeed">
 
       </div>
+
+      <?php if ( is_active_sidebar( 'home_bottom_1' ) )  dynamic_sidebar( 'home_bottom_1' ); ?>
+
       <div class="authors">
         <h2><?php echo rwmb_meta( 'author_intro_headline'); ?></h2>
         <?php echo apply_filters('the_content', rwmb_meta( 'author_intro_content')); ?>

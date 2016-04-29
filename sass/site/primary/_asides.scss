@@ -2,3 +2,25 @@
 .archive .format-aside .entry-title {
 	display: none;
 }
+
+.tweet-this a {
+  padding: 15px;
+  border: 1px solid #00aced;
+  background-color: transparent;
+  -webkit-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+  color: #00aced;
+  @include font-size(0.7);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin-top: 1em;
+
+}
+
+.tweet-this a:hover {
+  background-color: #00aced;
+  color: #fff;
+  text-decoration: none;
+}

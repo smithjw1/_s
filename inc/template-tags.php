@@ -34,9 +34,17 @@ function piketopine_posted_on() {
 		esc_html( get_the_author() )
 	);
 
-	echo '<span class="byline"> ' . $byline . '</span> / <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+	echo '<span class="byline"> ' . $byline . '</span> / <span class="posted-on">' . $posted_on . '</span>' . piketopine_social_links(); // WPCS: XSS OK.
 }
 endif;
+
+function piketopine_social_links() {
+  $pageURL = urlencode(get_permalink());
+  $tweet = urlencode(get_post_meta ( get_the_ID(),'_yoast_wpseo_twitter-description',true ));
+
+  $html = '<span class="social-links">Share: <a target="_blank" href="https://twitter.com/intent/tweet?via=piketopine&text='.$tweet.'&url='.$pageURL.'"><span class="icon-twitter"></span></a> <a href="javascript:FB.ui({method: \'share\',href:window.location.href}, function(response){});"><span class="icon-facebook"></span></a> <a href="https://www.pinterest.com/pin/create/button/" data-pin-custom="true"><span class="icon-pinterest"></span></a></span>';
+  return $html;
+}
 
 if ( ! function_exists( 'piketopine_entry_header' ) ) :
 /**
@@ -65,8 +73,9 @@ function piketopine_entry_footer() {
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'piketopine' ) );
+    print  piketopine_social_links();
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'piketopine' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf('<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'piketopine' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

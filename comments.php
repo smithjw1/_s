@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div class="holds-comments"><div id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -42,8 +42,10 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
+          'walker' => new ptp_comment_walker(),
 					'style'      => 'ol',
 					'short_ping' => true,
+          'avatar_size' => 0
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -71,7 +73,23 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	comment_form(array(
+    'fields'=>array(
+      'author' =>
+        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+        '" size="30"' . $aria_req . ' placeholder="Enter your name" />',
+
+      'email' =>
+        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+        '" size="30"' . $aria_req . ' placeholder="Enter your email address "/>',
+
+      'url' => '',
+    ),
+    'comment_field' => '<textarea id="comment" name="comment" aria-required="true" placeholder="Message"></textarea>',
+    'comment_notes_before' => '',
+    'title_reply' => '',
+    'label_submit'=>'Submit',
+  ));
 	?>
 
-</div><!-- #comments -->
+</div></div><!-- #comments -->

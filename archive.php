@@ -6,7 +6,7 @@
  *
  * @package _s
  */
-
+set_transient( 'ptp_back_link', '<a href="#" class="back">Back to category</a>', 12 * HOUR_IN_SECONDS );
 get_header(); ?>
 
 	<div id="primary" class="content-area">

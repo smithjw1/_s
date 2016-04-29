@@ -28,6 +28,23 @@
 </head>
 
 <body <?php body_class(); ?>>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1065953273450800',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'piketopine' ); ?></a>
 
@@ -35,9 +52,7 @@
 		<div class="site-branding">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><img src="<?php echo get_template_directory_uri() ?>/images/ptp-logo.png"></a>
 		</div><!-- .site-branding -->
-    <?php if(is_single()): ?>
-    <a href="#" class="back"> Back</a>
-    <?php endif; ?>
+    <?php if(is_single()) ptp_back_link(); ?>
 		<a href="#" class="search"></a>
 	</header><!-- #masthead -->
 

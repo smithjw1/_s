@@ -8,10 +8,8 @@
  */
 
 ?>
-<figure class="post-photo" style="background-image: url(<?php echo ptp_get_header_image() ?>)">
-  <div class="gradient"></div>
-</figure>
-<div class="holds-article">
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
     <div class="entry-meta">
@@ -51,4 +49,3 @@
 		<?php piketopine_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-</div>

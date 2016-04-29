@@ -2,11 +2,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Rozha One', sans-serif;
   color: #525252;
   font-weight: 700;
-  margin: 1.43em auto 0.71em;
+  margin: 20px auto 10px;
 }
 
 h1 {
   @include font-size(2.5)
+  margin-top: 0.3em;
   line-height: 1.16em;
   text-align: center;
 }

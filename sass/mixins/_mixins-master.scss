@@ -22,3 +22,15 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin breakpoint($mrpointy) {
+  @if $mrpointy == mobile {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $mrpointy == tablet {
+    @media (max-width: 1000px) { @content; }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: mobile, tablet";
+  }
+}

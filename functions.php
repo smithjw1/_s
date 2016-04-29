@@ -73,6 +73,16 @@ function piketopine_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+  register_sidebar( array(
+  		'name'          => 'Home Bottom Sidebar',
+  		'id'            => 'home_bottom_1',
+  		'before_widget' => '<div class="instagram">',
+  		'after_widget'  => '</div>',
+  		'before_title'  => '<h2>',
+  		'after_title'   => '</h2>',
+  	) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'piketopine_setup' );
@@ -111,7 +121,8 @@ foreach (array(
   'jetpack',
   'abn_basic',
   'home',
-  'short-codes'
+  'short-codes',
+  'metaboxes'
 ) as $plugin) {
  require_once(get_template_directory().'/inc/'.$plugin.'.php');
 }
@@ -125,3 +136,70 @@ function ptp_get_header_image() {
     return false;
   }
 }
+
+function ptp_back_link() {
+  if ( false === ( $backLink = get_transient( 'ptp_back_link' ) ) ) {
+     $backLink = '<a href="'.esc_url( home_url( '/' ) ).'" class="back"> Back to Home</a>';
+  }
+  echo $backLink;
+}
+
+add_filter('embed_oembed_html', 'ptp_add_wrapper', 10, 2);
+function ptp_add_wrapper( $return, $url ) {
+  if(strpos($url, 'youtube') !== false) {
+    return '<div class="youtube-embed">'.$return.'</div>';
+  }
+  else {
+      return $return;
+  }
+}
+
+add_filter('the_content', 'filter_ptags_on_images');
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+
+class ptp_comment_walker extends Walker_Comment {
+		var $tree_type = 'comment';
+		var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
+
+		// start_el – HTML for comment template
+		function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
+			$depth++;
+			$GLOBALS['comment_depth'] = $depth;
+			$GLOBALS['comment'] = $comment;
+			$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' );
+
+			if ( 'article' == $args['style'] ) {
+				$tag = 'article';
+				$add_below = 'comment';
+			} else {
+				$tag = 'article';
+				$add_below = 'comment';
+			} ?>
+
+			<li <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+				<div class="comment-meta post-meta" role="complementary">
+          <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					<p class="author"><?php comment_author(); ?></p>
+					<time class="comment-meta-item" datetime="<?php comment_date('Y-m-d') ?>T<?php comment_time('H:iP') ?>" itemprop="datePublished"><?php comment_date('F j, Y') ?> at <?php comment_time() ?></time>
+					<?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
+					<?php if ($comment->comment_approved == '0') : ?>
+					<p class="comment-meta-item">Your comment is awaiting moderation.</p>
+					<?php endif; ?>
+				</div>
+				<div class="comment-content post-content" itemprop="text">
+					<?php comment_text() ?>
+				</div>
+
+		<?php }
+
+		// end_el – closing HTML for comment template
+		function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
+
+      </li>
+
+		<?php }
+
+	}
