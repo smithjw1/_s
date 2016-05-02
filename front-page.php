@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package piketopine
  */
 delete_transient('ptp_back_link');
 get_header(); ?>

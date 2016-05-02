@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package piketopine
  */
 
 if ( ! function_exists( 'piketopine_setup' ) ) :

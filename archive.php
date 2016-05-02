@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package piketopine
  */
 set_transient( 'ptp_back_link', '<a href="#" class="back">Back to category</a>', 12 * HOUR_IN_SECONDS );
 get_header(); ?>

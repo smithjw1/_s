@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package piketopine
  */
 
 if ( ! function_exists( 'piketopine_posted_on' ) ) :
@@ -33,8 +33,11 @@ function piketopine_posted_on() {
 		esc_html_x( '%s', 'post author', 'piketopine' ),
 		esc_html( get_the_author() )
 	);
-
-	echo '<span class="byline"> ' . $byline . '</span> / <span class="posted-on">' . $posted_on . '</span>' . piketopine_social_links(); // WPCS: XSS OK.
+  $postedOn = '<span class="byline"> ' . $byline . '</span> / <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+  if(is_single()) {
+    $postedOn .= piketopine_social_links();
+  }
+	echo  $postedOn;
 }
 endif;
 

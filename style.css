@@ -688,6 +688,9 @@ a {
 # Content
 --------------------------------------------------------------*/
 header#masthead {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), transparent);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.75), transparent);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), transparent);
   position: relative;
   z-index: 1;
   height: 100px;
@@ -706,7 +709,7 @@ header#masthead {
     margin-top: 0px;
     -webkit-transition: opacity 200ms ease;
     transition: opacity 200ms ease;
-    color: #a4a4a4;
+    color: #FFF;
     font-size: 26px;
     font-size: 1.3rem;
     display: block;
@@ -740,12 +743,10 @@ header#masthead {
       header#masthead a.back {
         top: 190px; } }
 
-body.home header#masthead {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), transparent);
-  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.75), transparent);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), transparent); }
-  body.home header#masthead a.search:before {
-    color: #fff; }
+body.single header#masthead {
+  background-image: none; }
+  body.single header#masthead a.search:before {
+    color: #a4a4a4; }
 
 footer#colophon {
   background: #525252;
@@ -902,6 +903,7 @@ span.social-links {
 .updated:not(.published) {
   display: none; }
 
+.excerpt .byline,
 .single .byline,
 .group-blog .byline {
   display: inline; }
@@ -983,26 +985,29 @@ span.social-links {
 .post-nav div.next {
   padding: 0 5% 0 2%; }
 
-.post-nav img {
+a.excerpt iframe {
+  height: 240px !important; }
+
+a.excerpt img {
   margin: 0 auto;
   display: block; }
 
-.post-nav h4, .post-nav h3 {
+a.excerpt h4, a.excerpt h3 {
   color: #5bab66; }
 
-.post-nav a:hover h4, .post-nav a:hover h3 {
-  text-decoration: underline; }
-
-.post-nav h3 {
+a.excerpt h3 {
   font-size: 26px;
   font-size: 1.3rem;
   margin-bottom: 0; }
 
-.post-nav p.meta {
+a.excerpt p.meta {
   font-size: 16px;
   font-size: 0.8rem;
   color: #333;
   font-weight: normal; }
+
+a.excerpt.large iframe {
+  height: 380px !important; }
 
 /*--------------------------------------------------------------
 ## Asides
@@ -1085,6 +1090,17 @@ form#commentform input#submit {
 
 .bypostauthor {
   display: block; }
+
+.post-listing a.excerpt {
+  width: 25%;
+  float: left;
+  padding: 0 10px; }
+
+.post-listing a.excerpt:nth-child(3) {
+  clear: left; }
+
+.post-listing a.large {
+  width: 50%; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
