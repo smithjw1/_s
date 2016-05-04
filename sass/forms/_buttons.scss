@@ -1,3 +1,4 @@
+a.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -7,11 +8,11 @@ input[type="submit"] {
 	background: $color__background-button;
 	color: $color__border-button;
 	@include font-size(0.7);
-	line-height: 1;
   width: auto;
   padding: 15px 20px;
 	&:hover {
 		border-color: $color__border-button-hover;
+    text-decoration: none;
 	}
 	&:active,
 	&:focus {

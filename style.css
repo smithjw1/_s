@@ -418,6 +418,7 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+a.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -428,15 +429,18 @@ input[type="submit"] {
   color: #5bab66;
   font-size: 14px;
   font-size: 0.7rem;
-  line-height: 1;
   width: auto;
   padding: 15px 20px; }
+  a.button:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #5bab66; }
-  button:active, button:focus,
+    border-color: #5bab66;
+    text-decoration: none; }
+  a.button:active, a.button:focus,
+  button:active,
+  button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
@@ -465,12 +469,11 @@ textarea {
   border: 1px solid #a4a4a4;
   display: block;
   width: 100%;
-  height: 38px;
   margin-bottom: 10px;
   font-size: 14px;
   font-size: 0.7rem;
-  line-height: 1.428571429;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding: 15px 20px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -491,24 +494,6 @@ textarea {
 
 select {
   border: 1px solid #a4a4a4; }
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-  padding: 8px 12px; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -752,9 +737,7 @@ footer#colophon {
   background: #525252;
   text-align: center;
   color: #a4a4a4;
-  padding: 60px 0;
-  width: 60%;
-  margin-left: 40%; }
+  padding: 60px 0; }
   @media (max-width: 1000px) {
     footer#colophon {
       width: 100%;
@@ -813,9 +796,9 @@ footer#colophon {
     font-size: 14px;
     font-size: 0.7rem; }
 
-body.home footer#colophon, body.blog footer#colophon {
-  width: 100%;
-  margin-left: 0; }
+body.single footer#colophon {
+  width: 60%;
+  margin-left: 40%; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -835,12 +818,12 @@ body.home footer#colophon, body.blog footer#colophon {
   .holds-article {
     margin-top: -50px; } }
 
-.hentry p, .hentry ul, .hentry ol, .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry span, .hentry footer {
+.hentry p, .hentry ul, .hentry ol, .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry span, .hentry footer, .hentry .page-content {
   margin-left: auto;
   margin-right: auto;
   max-width: 630px; }
   @media (max-width: 480px) {
-    .hentry p, .hentry ul, .hentry ol, .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry span, .hentry footer {
+    .hentry p, .hentry ul, .hentry ol, .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry span, .hentry footer, .hentry .page-content {
       max-width: 95%; } }
 
 .hentry .youtube-embed {
@@ -905,7 +888,8 @@ span.social-links {
 
 .excerpt .byline,
 .single .byline,
-.group-blog .byline {
+.group-blog .byline,
+.home-features .byline {
   display: inline; }
 
 .page-content .intro,
@@ -1009,6 +993,9 @@ a.excerpt p.meta {
 a.excerpt.large iframe {
   height: 380px !important; }
 
+.page-header {
+  margin-bottom: 2em; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -1035,6 +1022,52 @@ a.excerpt.large iframe {
   background-color: #00aced;
   color: #fff;
   text-decoration: none; }
+
+form.searchandfilter {
+  text-align: center; }
+  form.searchandfilter div:before {
+    content: "FILTER:";
+    font-size: 14px;
+    font-size: 0.7rem;
+    display: inline; }
+  form.searchandfilter select {
+    -webkit-appearance: none;
+    background: #fff;
+    border-radius: 0;
+    padding: 10px 30px 10px 20px;
+    display: block; }
+    form.searchandfilter select option {
+      text-transform: capitalize; }
+  form.searchandfilter li {
+    position: relative; }
+  form.searchandfilter li:after {
+    font-family: 'icomoon' !important;
+    content: "\e907";
+    font-size: 14px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 17px;
+    right: 19px;
+    pointer-events: none; }
+  form.searchandfilter li:last-child:after {
+    display: none; }
+  form.searchandfilter li:last-child input {
+    position: relative;
+    top: -1px; }
+
+.search-form {
+  margin-bottom: 2em; }
+  .search-form:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both; }
+  .search-form input {
+    display: block;
+    float: left; }
+  .search-form label input {
+    width: 70%;
+    margin-right: 2%; }
 
 /*--------------------------------------------------------------
 ## Comments

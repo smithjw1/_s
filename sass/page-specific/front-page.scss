@@ -1,0 +1,113 @@
+@import "../variables-site/variables-site";
+@import "../mixins/mixins-master";
+.home-features {
+  position: relative;
+  top: -100px;
+  margin-bottom: -50px;
+  article {
+    position: relative;
+    width: 33%;
+    display: inline-block;
+    height: 600px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:0;
+    transition: width 500ms;
+    .entry-content, .entry-footer {
+      opacity: 0;
+      transition: opacity 1000ms;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5));
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 200px 7.5% 0 7.5%;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      color: #FFF;
+      h2 {color: #FFF;}
+      .button {
+        display: block;
+        background: none;
+        color: #FFF;
+        width: 200px;
+        margin: 0 auto 1em auto;
+        border-color: #FFF;
+        @include font-size(1);
+        &:hover {
+          background: #FFF;
+          color: $color__text-screen;
+        }
+      }
+    }
+  }
+  article:hover {
+    .entry-content {opacity: 1}
+  }
+}
+.home-content {
+  max-width: 940px;
+  margin: 0 auto;
+  @include font-size(1.4);
+
+  text-align: center;
+  @include breakpoint(mobile) {max-width: 95%;}
+  * {max-width: none !important}
+}
+
+.instagram {
+  clear: left;
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  h2 {
+    margin-bottom: 30px;
+    color: $color__link;
+    text-align: center;
+  }
+  ul.instagram-pics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    float: left;
+    width: 16.666%;
+    margin-bottom: 0;
+    box-shadow: inset 0 0 6px -1px rgba(0, 0, 0, .64);
+    transition: opacity 200ms;
+    background-color: #000;
+    img {display: block;}
+  }
+  li:hover img {opacity: 0.8;}
+}
+
+.authors {
+  margin-top: 3em;
+  h2, .content {
+    max-width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    @include breakpoint(mobile) {
+      max-width: 95%;
+    }
+  }
+  h2 {margin-bottom: 0.5em}
+  .author {
+    width: 25%;
+    float: left;
+    text-align: center;
+    margin-bottom: 2em;
+    img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 1em auto;
+      transition: opacity 200ms;
+      &:hover {opacity: 0.8}
+    }
+  }
+}

@@ -49,6 +49,19 @@ function piketopine_social_links() {
   return $html;
 }
 
+function piketopine_combined_tags() {
+  $tags = wp_get_post_terms( get_the_ID(), array('post_tag', 'location','ingredient'));
+  $html = '';
+  foreach($tags as $tag) {
+    if($tag->taxonomy === 'post_tag') {
+      $tag->taxonomy = 'tag';
+    }
+    $html .= '<a class="'.$tag->taxonomy.'" href="/'.$tag->taxonomy.'/'.$tag->slug.'">'.$tag->name.'</a>, ';
+  }
+  $html = rtrim($html, ', ');
+  return $html;
+}
+
 if ( ! function_exists( 'piketopine_entry_header' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -75,7 +88,8 @@ function piketopine_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'piketopine' ) );
+
+    $tags_list = piketopine_combined_tags();
     print  piketopine_social_links();
 		if ( $tags_list ) {
 			printf('<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'piketopine' ) . '</span>', $tags_list ); // WPCS: XSS OK.
@@ -88,8 +102,8 @@ function piketopine_entry_footer() {
 			esc_html__( 'Edit %s', 'piketopine' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
-		'</span>'
+		'<p class="edit-link">',
+		'</p>'
 	);
 }
 endif;

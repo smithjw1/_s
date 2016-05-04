@@ -21,4 +21,29 @@ function ptp_home_meta_boxes( $meta_boxes ) {
   );
   return $meta_boxes;
 }
+
+
+add_action( 'init', 'piketopine_location_init' );
+function piketopine_location_init() {
+	register_taxonomy(
+		'location',
+		'post',
+		array(
+			'label' => __( 'Locations' ),
+			'rewrite' => array( 'slug' => 'location' ),
+		)
+	);
+}
+
+add_action( 'init', 'piketopine_ingreient_init' );
+function piketopine_ingreient_init() {
+	register_taxonomy(
+		'ingredient',
+		'post',
+		array(
+			'label' => __( 'Ingredients' ),
+			'rewrite' => array( 'slug' => 'ingredient' ),
+		)
+	);
+}
 ?>

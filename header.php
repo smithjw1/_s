@@ -16,14 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-<script>
-  WebFont.load({
-    google: {
-      families: ["Rozha One:regular","Playfair Display:regular,italic,700,700italic,900,900italic"]
-    }
-  });
-</script>
+<link href='https://fonts.googleapis.com/css?family=Rozha+One' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 

@@ -24,3 +24,51 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+form.searchandfilter {
+  text-align: center;
+  div:before {
+    content: "FILTER:";
+    @include font-size(0.7);
+    display: inline;
+  }
+  select {
+    -webkit-appearance: none;
+    background: #fff;
+    border-radius: 0;
+    padding: 10px 30px 10px 20px;
+    display: block;
+    option {
+      text-transform: capitalize;
+    }
+  }
+  li {position: relative}
+  li:after {
+    font-family: 'icomoon' !important;
+    content: "\e907";
+    @include font-size(0.7);
+    position: absolute;
+    top: 17px;
+    right: 19px;
+    pointer-events: none;
+  }
+  li:last-child:after {display: none}
+  li:last-child input {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.search-form {
+  margin-bottom: 2em;
+  &:after{@include clearfix;@include clearfix-after}
+  input {
+    display: block;
+    float: left;
+  }
+  label input {
+    width: 70%;
+    margin-right: 2%;
+  }
+}
