@@ -33,6 +33,7 @@ get_header(); ?>
 					comments_template();
 				endif;
 			endwhile; // End of the loop.
+      wp_reset_postdata();
 			?>
       <div class="subscribe">
 
@@ -46,6 +47,7 @@ get_header(); ?>
       get_template_part( 'template-parts/content', 'excerpt' );
       $i++;
       endforeach;
+      wp_reset_postdata();
       ?>
       </div>
       <?php if ( is_active_sidebar( 'home_bottom_1' ) )  dynamic_sidebar( 'home_bottom_1' ); ?>

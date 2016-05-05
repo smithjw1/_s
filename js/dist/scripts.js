@@ -6,7 +6,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 jQuery.noConflict();
 
 jQuery( document ).ready(function( $ ) {
-  if($('.home-features').get(0)) {
+  if($('.home-features').get(0) && $(window).width() > 1000) {
     $('.home-features article').hover(
       function() {
         $(this).width('49%');

@@ -3,10 +3,6 @@ footer#colophon {
   text-align: center;
   color: #a4a4a4;
   padding: 60px 0;
-  @include breakpoint(tablet) {
-    width: 100%;
-    margin-left: 0;
-  }
   ul#social {
     list-style: none;
     width: 229px;
@@ -47,6 +43,7 @@ footer#colophon {
       &:before {content: "\e904";}
       &:hover {color: #4b74cc;}
     }
+    li.instagram {clear: none};
     li.instagram a {
       &:before {content: "\e903";}
       &:hover {color: #517fa4;}
@@ -67,5 +64,9 @@ body.single {
   footer#colophon {
     width: 60%;
     margin-left: 40%;
+    @include breakpoint(tablet) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }

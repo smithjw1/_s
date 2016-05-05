@@ -738,10 +738,6 @@ footer#colophon {
   text-align: center;
   color: #a4a4a4;
   padding: 60px 0; }
-  @media (max-width: 1000px) {
-    footer#colophon {
-      width: 100%;
-      margin-left: 0; } }
   footer#colophon ul#social {
     list-style: none;
     width: 229px;
@@ -782,6 +778,8 @@ footer#colophon {
       content: "\e904"; }
     footer#colophon ul#social li.facebook a:hover {
       color: #4b74cc; }
+    footer#colophon ul#social li.instagram {
+      clear: none; }
     footer#colophon ul#social li.instagram a:before {
       content: "\e903"; }
     footer#colophon ul#social li.instagram a:hover {
@@ -799,6 +797,35 @@ footer#colophon {
 body.single footer#colophon {
   width: 60%;
   margin-left: 40%; }
+  @media (max-width: 1000px) {
+    body.single footer#colophon {
+      width: 100%;
+      margin-left: 0; } }
+
+.post-listing a.excerpt {
+  width: 25%;
+  float: left;
+  padding: 0 10px; }
+  @media (max-width: 1000px) {
+    .post-listing a.excerpt {
+      width: 50%; } }
+  @media (max-width: 480px) {
+    .post-listing a.excerpt {
+      width: 100%;
+      float: none; } }
+
+.post-listing a.excerpt:nth-child(3) {
+  clear: left; }
+  @media (max-width: 1000px) {
+    .post-listing a.excerpt:nth-child(3) {
+      clear: none; } }
+
+@media (max-width: 1000px) {
+  .post-listing a.excerpt:nth-child(2n+1) {
+    clear: left; } }
+
+.post-listing a.large {
+  width: 50%; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -824,7 +851,7 @@ body.single footer#colophon {
   max-width: 630px; }
   @media (max-width: 480px) {
     .hentry p, .hentry ul, .hentry ol, .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry span, .hentry footer, .hentry .page-content {
-      max-width: 95%; } }
+      max-width: 90%; } }
 
 .hentry .youtube-embed {
   margin: 1em 5%;
@@ -1123,17 +1150,6 @@ form#commentform input#submit {
 
 .bypostauthor {
   display: block; }
-
-.post-listing a.excerpt {
-  width: 25%;
-  float: left;
-  padding: 0 10px; }
-
-.post-listing a.excerpt:nth-child(3) {
-  clear: left; }
-
-.post-listing a.large {
-  width: 50%; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
