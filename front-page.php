@@ -11,7 +11,7 @@
  *
  * @package piketopine
  */
-$authors = get_users(array('exclude'=>array(1)));
+$authors = get_users(array('include'=>array(2,3,4,5)));
 delete_transient('ptp_back_link');
 get_header(); ?>
 
