@@ -686,7 +686,8 @@ header#masthead {
   padding-left: 30px; }
   header#masthead .site-branding {
     width: 200px;
-    position: fixed; }
+    position: static;
+    float: left; }
     @media (max-width: 1000px) {
       header#masthead .site-branding {
         position: static;
@@ -741,11 +742,11 @@ header#masthead {
 
 body.single header#masthead {
   background-image: none; }
-  body.single header#masthead a.show-search:after {
-    color: #a4a4a4; }
-
-body.single header#masthead a.show-search {
-  border-color: rgba(0, 0, 0, 0.2); }
+  body.single header#masthead .site-branding {
+    float: none;
+    position: fixed; }
+  body.single header#masthead a.show-search {
+    border-color: rgba(0, 0, 0, 0.2); }
   body.single header#masthead a.show-search:after {
     color: #a4a4a4; }
 
@@ -909,17 +910,17 @@ div.holds-search {
   .holds-article {
     margin-top: -50px; } }
 
-.single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry span, .single .hentry footer, .single .hentry .page-content {
+.single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
   margin-left: auto;
   margin-right: auto;
   max-width: 690px;
   padding: 0 30px; }
   @media (max-width: 1000px) {
-    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry span, .single .hentry footer, .single .hentry .page-content {
+    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
       max-width: 670px;
       padding: 0 20px; } }
   @media (max-width: 480px) {
-    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry span, .single .hentry footer, .single .hentry .page-content {
+    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
       max-width: 90%; } }
 
 .single .hentry .youtube-embed {
@@ -965,7 +966,7 @@ span.social-links {
   span.social-links a {
     color: #333;
     margin-right: 5px;
-    margin-left: 15px;
+    margin-left: 10px;
     cursor: pointer; }
   span.social-links a:hover {
     text-decoration: none; }
