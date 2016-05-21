@@ -62,13 +62,26 @@ form.searchandfilter {
 
 .search-form {
   margin-bottom: 2em;
-  &:after{@include clearfix;@include clearfix-after}
-  input {
+  &:after{@include clearfix;@include clearfix-after;}
+  input, button {
     display: block;
     float: left;
   }
-  label input {
-    width: 70%;
-    margin-right: 2%;
+  input.search-field {
+    @include font-size(1);
+    width: 90%;
+    margin-right: 0;
+    border-right: none;
+  }
+  button {
+    display: block;
+    width: 10%;
+    @include font-size(1.5);
+    color: $color__text-input;
+    border-color: $color__text-input;
+    &:hover {
+      background: $color__text-input;
+      color: #FFF;
+    }
   }
 }

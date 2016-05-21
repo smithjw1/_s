@@ -10,8 +10,10 @@ input[type="submit"] {
 	@include font-size(0.7);
   width: auto;
   padding: 15px 20px;
+  transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
 	&:hover {
-		border-color: $color__border-button-hover;
+    background-color: $color__border-button;
+    color: $color__background-button;
     text-decoration: none;
 	}
 	&:active,

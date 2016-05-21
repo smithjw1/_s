@@ -9,11 +9,11 @@
  global $i;
  if($i <= 2) {
    $class = 'excerpt large';
-   $imageSize = 'medium';
+   $imageSize = 'large';
  }
  else {
    $class = 'excerpt';
-   $imageSize = 'thumbnail';
+   $imageSize = 'medium';
  }
 ?>
 
@@ -22,7 +22,9 @@
     echo wp_oembed_get(get_the_content(''));
   }
   else {
-    the_post_thumbnail($imageSize);
+    echo '<div class="holds-thumb">';
+    the_post_thumbnail($imageSize, array( 'class' => 'post-thumbnail' ));
+    echo '</div>';
   }
   ?>
   <h3><?php the_title() ?></h3>

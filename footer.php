@@ -10,7 +10,6 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -20,7 +19,10 @@
     <p>&copy; <?php echo date('Y'); ?> Pike to Pine. All Rights Reserved.</p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<div class="holds-search">
+  <a href="#close" class="close-search icon-close"></a>
+  <?php get_search_form() ?>
+</div>
 <?php wp_footer(); ?>
 <script
     type="text/javascript"

@@ -46,7 +46,7 @@
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><img src="<?php echo get_template_directory_uri() ?>/images/ptp-logo.png"></a>
 		</div><!-- .site-branding -->
     <?php if(is_single()) ptp_back_link(); ?>
-		<a href="#" class="search"></a>
+		<a href="#" class="show-search"></a>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

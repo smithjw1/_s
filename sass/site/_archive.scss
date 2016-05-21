@@ -1,5 +1,21 @@
-
 .post-listing {
+  width: 98%;
+  margin: 0 auto;
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .holds-thumb {
+    background: #000;
+    img.post-thumbnail {
+      width: 100%;
+      transition: opacity 1000ms;
+    }
+    &:hover img {
+      opacity: 0.6;
+    }
+  }
+
   a.excerpt {
     width: 25%;
     float: left;
@@ -10,13 +26,19 @@
       float: none;
     }
   }
-   a.excerpt:nth-child(3) {
-     clear:left;
-     @include breakpoint(tablet) {clear:none}
-   }
+
    a.excerpt:nth-child(2n+1) {@include breakpoint(tablet) {clear:left}}
 
    a.large {
      width: 50%;
+   }
+
+   a.more-posts {
+     clear: left;
+     display: block;
+     width: 250px;
+     text-align: center;
+     margin: 0 auto;
+     @include font-size(0.9);
    }
 }

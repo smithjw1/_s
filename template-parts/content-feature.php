@@ -16,4 +16,5 @@
     <a href="<?php the_permalink()?>" class="button">Read More</a>
       <?php piketopine_posted_on(); ?>
 	</div><!-- .entry-content -->
+  <div class="shade"></div>
 </article><!-- #post-## -->

@@ -10,14 +10,22 @@ header#masthead {
   padding-left: 30px;
   .site-branding {
     width: 200px;
-    float: left;
+    position: fixed;
     @include breakpoint(tablet) {
+      position: static;
       float: none;
       margin: 0 auto;
     }
   }
-
-  a.search:before {
+  a.show-search {
+    float: right;
+    margin-right: 1%;
+    display: block;
+    border: 1px solid #FFF;
+    border-color: hsla(0, 0%, 100%, .4);
+    width: 180px;
+  }
+  a.show-search:after {
     content: "\e902";
     font-family: 'icomoon';
     margin-top: 0px;
@@ -27,7 +35,7 @@ header#masthead {
     @include font-size(1.3);
     display: block;
     float: right;
-    margin-right: 30px;
+    margin-right: 10px;
     &:hover {
       opacity: 0.8;
       text-decoration: none;
@@ -39,7 +47,7 @@ header#masthead {
   }
   a.back {
     color: #525252;
-    margin-left: 28%;
+    margin-left: 40%;
     @include font-size(0.8);
     &:before {
       text-decoration: none;
@@ -60,5 +68,9 @@ header#masthead {
 
 body.single header#masthead {
   background-image: none;
-  a.search:before {color: #a4a4a4;}
+  a.show-search:after {color: #a4a4a4;}
+}
+body.single header#masthead a.show-search {
+  border-color: rgba(0, 0, 0, .2);
+  &:after {color: #a4a4a4;}
 }
