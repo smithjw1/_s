@@ -81,8 +81,8 @@ get_header(); ?>
         </div>
         <?php foreach($authors as $author): ?>
         <div class="author">
-          <a href="/bios/<?php echo $author->data->user_login ?>"><img src="<?php echo get_cupp_meta($author->data->ID, 'medium'); ?>" alt=""></a>
-          <a href="/bios/<?php echo $author->data->user_login ?>"><?php echo $author->data->display_name; ?></a>
+          <a href="/bios/<?php echo $author->data->user_login ?>/"><img src="<?php echo get_cupp_meta($author->data->ID, 'medium'); ?>" alt=""></a>
+          <a href="/bios/<?php echo $author->data->user_login ?>/"><?php echo $author->data->display_name; ?></a>
         </div>
         <?php endforeach; ?>
       </div>
