@@ -883,6 +883,8 @@ div.holds-search {
       clear: left; } }
   .post-listing a.large {
     width: 50%; }
+  .post-listing a.clear {
+    clear: left; }
   .post-listing a.more-posts {
     clear: left;
     display: block;

@@ -12,6 +12,9 @@ header#masthead {
   position: relative;
   top: -100px;
   margin-bottom: -50px;
+	width: 100%;
+	display: block;
+	height: 100vh;
   article {
     position: relative;
     width: 33.333%;
@@ -23,6 +26,7 @@ header#masthead {
     background-repeat: no-repeat;
     margin:0;
     transition: width 500ms;
+		box-sizing: border-box;
     @include breakpoint(tablet) {
       width: 100%;
       height: 350px;
@@ -48,7 +52,7 @@ header#masthead {
       opacity: 0;
       transition: opacity 1000ms;
       position: absolute;
-      bottom: 7.5%;
+      bottom: 25%;
       left: 0;
       padding: 0 7.5%;
       text-align: center;
@@ -97,6 +101,7 @@ header#masthead {
 
   }
 }
+#home-brand-content {clear:left}
 .home-content {
   max-width: 940px;
   margin: 0 auto;

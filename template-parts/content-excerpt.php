@@ -15,6 +15,10 @@
    $class = 'excerpt';
    $imageSize = 'medium';
  }
+
+ if($i === 3) {
+	 $class .= ' clear';
+ }
 ?>
 
 <a href="<?php echo the_permalink() ?>" class="<?php echo $class ?>"><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

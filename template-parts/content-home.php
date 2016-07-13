@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="home-brand-content" <?php post_class(); ?>>
 	<header class="entry-header">
 		<img class="mark" src="<?php echo get_template_directory_uri() .'/images/ptp-mark.jpg'?>">
 	</header><!-- .entry-header -->
