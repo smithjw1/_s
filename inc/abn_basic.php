@@ -2,7 +2,7 @@
 class abn_wordpress {
 
     var $style_name = 'piketopine-style';
-    var $bug_link_setup = true;
+    var $bug_link_setup = false;
     var $bug_link_info = array(
       'form-id' => '1lqHeKRNJ73f_HhU9KdJNofFKiw6VHPXuDQGE2hHHLvg',
       'user' => '624350126',
