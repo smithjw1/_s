@@ -113,6 +113,7 @@ header#masthead {
 }
 #mc_embed_signup {
   max-width: 940px;
+	width: 95%;
   margin: 2em auto 4em auto;
   &:after {
     @include clearfix;
@@ -130,9 +131,13 @@ header#masthead {
   input#mce-EMAIL {
     width: 84%;
     border-right: none;
+		@include breakpoint(tablet) {width: 75%;}
+		@include breakpoint(tablet) {width: 65%;}
   }
   input#mc-embedded-subscribe {
     width: 16%;
+		@include breakpoint(tablet) {width: 25%;}
+		@include breakpoint(tablet) {width: 35%;}
     @include font-size(1);
     color: $color__text-input;
     border-color: $color__text-input;

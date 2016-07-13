@@ -7,30 +7,57 @@
   }
   .holds-thumb {
     background: #000;
+		overflow: hidden;
+		height: 0;
+		padding-bottom: 68%;
+		position: relative;
     img.post-thumbnail {
       width: 100%;
       transition: opacity 1000ms;
+			top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+			position: absolute;
     }
+
     &:hover img {
       opacity: 0.6;
     }
+		iframe {width: 100% !important;}
   }
 
   a.excerpt {
     width: 25%;
     float: left;
     padding: 0 10px;
+		iframe {height: 210px !important;}
     @include breakpoint(tablet) {width: 50%;}
     @include breakpoint(mobile) {
       width: 100%;
       float: none;
     }
+		img {margin: 0 auto;display:block;}
+	  h4,h3 {color: $color__link}
+	  h3 {
+	    @include font-size(1.3);
+	    margin-bottom: 0;
+	  }
+	  p.meta {
+	    @include font-size(0.8);
+	    color: $color__text-screen;
+	    font-weight: normal;
+	  }
   }
-
-   a.excerpt:nth-child(2n+1) {@include breakpoint(tablet) {clear:left}}
 
    a.large {
      width: 50%;
+		 .holds-thumb {padding-bottom: 52%;}
+		 iframe {
+			height: 380px !important;
+			@include breakpoint(tablet) {height: 230px !important;}
+		 }
    }
 	 a.clear {clear:left}
    a.more-posts {

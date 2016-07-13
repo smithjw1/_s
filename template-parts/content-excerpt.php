@@ -28,8 +28,9 @@
   else {
     echo '<div class="holds-thumb">';
     the_post_thumbnail($imageSize, array( 'class' => 'post-thumbnail' ));
-    echo '</div>';
+		echo '</div>';
   }
+
   ?>
   <h3><?php the_title() ?></h3>
   <p class="meta"><?php piketopine_posted_on(); ?></p>

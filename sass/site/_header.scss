@@ -25,6 +25,10 @@ header#masthead {
     border: 1px solid #FFF;
     border-color: hsla(0, 0%, 100%, .4);
     width: 180px;
+		@include breakpoint(mobile) {
+			border: none;
+			width: auto;
+		}
   }
   a.show-search:after {
     content: "\e902";
@@ -41,10 +45,7 @@ header#masthead {
       opacity: 0.8;
       text-decoration: none;
     }
-    @include breakpoint(tablet) {
-      color: #FFF;
-      margin-top: -40px;
-    }
+    @include breakpoint(tablet) {color: #FFF;}
   }
   a.back {
     color: #525252;
