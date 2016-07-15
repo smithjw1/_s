@@ -73,6 +73,11 @@ body.single header#masthead {
   .site-branding {
     float: none;
     position: fixed;
+		@include breakpoint(tablet) {
+			position: static;
+			float: none;
+			margin: 0 auto;
+		}
   }
   a.show-search {border-color: rgba(0, 0, 0, .2);}
   a.show-search:after {color: #a4a4a4;}

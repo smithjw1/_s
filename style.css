@@ -748,6 +748,11 @@ body.single header#masthead {
   body.single header#masthead .site-branding {
     float: none;
     position: fixed; }
+    @media (max-width: 1000px) {
+      body.single header#masthead .site-branding {
+        position: static;
+        float: none;
+        margin: 0 auto; } }
   body.single header#masthead a.show-search {
     border-color: rgba(0, 0, 0, 0.2); }
   body.single header#masthead a.show-search:after {
@@ -960,7 +965,7 @@ div.holds-search {
     .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
       max-width: 90%; } }
 
-.single .hentry ul {
+.single .hentry ul, .single .hentry ol {
   position: relative;
   left: 5%; }
 
