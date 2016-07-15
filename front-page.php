@@ -11,7 +11,8 @@
  *
  * @package piketopine
  */
-$authors = get_users(array('include'=>array(2,3,4,5)));
+$rawAuthors = get_users(array('include'=>array(2,3,4,5),'orderby'=>'id'));
+$authors = array($rawAuthors[1],$rawAuthors[3],$rawAuthors[0],$rawAuthors[2]);
 delete_transient('ptp_back_link');
 get_header(); ?>
 
@@ -58,7 +59,7 @@ get_header(); ?>
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
     <!--End mc_embed_signup-->
       <div class="post-listing">
-        <?php echo do_shortcode( '[searchandfilter taxonomies="category,location,ingredient"]' ); ?>
+        <?php echo do_shortcode( '[searchandfilter taxonomies="category,location,ingredient" post_types="posts" hide_empty="1,1,1"]' ); ?>
       <?php
       $i = 1;
       $myposts = get_posts( 'posts_per_page=10' );

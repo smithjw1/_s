@@ -6,7 +6,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
     <header class="page-header">
       <h1 class="page-title">All Posts</h1>
-      <?php echo do_shortcode( '[searchandfilter taxonomies="category,location,ingredient"]' ); ?>
+      <?php echo do_shortcode( '[searchandfilter taxonomies="category,location,ingredient" post_types="posts" hide_empty="1,1,1"]' ); ?>
     </header>
 		<main id="main" class="site-main post-listing" role="main">
 		<?php

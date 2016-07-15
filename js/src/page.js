@@ -11,6 +11,13 @@ jQuery( document ).ready(function( $ ) {
     );
   }
 
+	if($('.searchandfilter').get(0)) {
+		$('.searchandfilter select').each(function(){
+			if(!$(this).children().length) {
+				$(this).parent('li').hide();
+			}
+		});
+	}
   $('a.close-search').click(function(){
     $('div.holds-search').hide();
   });
