@@ -4,9 +4,20 @@ header#masthead {
   .site-branding {
     position: static;
     float: left;
+		@include breakpoint(mobile) {
+			float: none;
+			margin: 0 auto;
+		}
   }
-  a.search {border-color: hsla(0, 0%, 100%, .4);}
-  a.search:after {color: #FFF;}
+  a.search {
+		border-color: hsla(0, 0%, 100%, .4);
+		&:after {color: #FFF;}
+	}
+  a.show-search {
+		position: absolute;
+		top: 28px;
+		right: 0;
+	}
 }
 .home-features {
   position: relative;
@@ -34,8 +45,7 @@ header#masthead {
 		}
     @include breakpoint(mobile) {
 			height: auto;
-			background-size: auto 250px;
-			background-position: top center;
+			background: none !important;
     }
     .shade {
       background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5));
@@ -48,24 +58,44 @@ header#masthead {
       transition: opacity 1500ms;
       z-index: 0;
       @include breakpoint(mobile) {
-        height: 250px;
+				height: 250px;
 				opacity: 1;
-				z-index: -1;
-				background: #000;
-
-      }
+			}
     }
+		.holds-mobile-image {
+			display: none;
+			@include breakpoint(mobile) {
+				display: block;
+				position: relative;
+				width: 100%;
+				height: 250px;
+				overflow: hidden;
+				img {
+					min-width: 100%;
+					min-height: 100%;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+		}
     .entry-content, .entry-footer {
       z-index: 1;
       opacity: 0;
       transition: opacity 1000ms;
       position: absolute;
-      bottom: 25%;
-      left: 0;
+      bottom: 10%;
+			left: 50%;
+  		margin-left: -16.5vw;
       padding: 0 7.5%;
       text-align: center;
-      width: 100%;
+      width: 33vw;
       color: #FFF;
+
       h2 {color: #FFF;}
       .button {
         display: block;
@@ -81,24 +111,27 @@ header#masthead {
         }
       }
       @include breakpoint(mobile) {
-        top: 140px;
-        left: 0;
+        position: relative;
+				top: -5em;
+				margin-bottom: -3em;
+				left: 0;
         color: $color__text-screen;
         width: 100%;
-        padding: 0 20px 180px 20px;
+				margin-left: 0;
         opacity: 1;
         background: transparent;
-				position: relative;
 				text-align: left;
         h2 {
 					min-height: 3em;
           padding-bottom: 14px;
           @include font-size(1.3);
           margin-bottom: 26px;
+					text-align: center;
         }
         .button {
           color: $color__text-screen;
           border-color: $color__text-screen;
+					text-align: center;
           &:hover {
             color: #FFF;
             background: $color__text-screen;
@@ -108,7 +141,9 @@ header#masthead {
     }
   }
   article:hover {
-    .shade,.entry-content {opacity: 1}
+    .shade,.entry-content {
+			opacity: 1;
+		}
 
   }
 }
@@ -121,7 +156,7 @@ header#masthead {
   text-align: center;
   @include breakpoint(mobile) {
 		max-width: 95%;
-		text-align: left;
+
 	}
   * {max-width: none !important}
 }
@@ -141,20 +176,33 @@ header#masthead {
   }
   input {
     float: left;
+		@include breakpoint(mobile) {
+			margin: 0 auto 0.3em;
+			float: none;
+			clear: left;
+		}
   }
   input#mce-EMAIL {
     width: 84%;
     border-right: none;
 		@include breakpoint(tablet) {width: 75%;}
-		@include breakpoint(tablet) {width: 65%;}
+		@include breakpoint(mobile) {
+			width: 100%;
+			border-right: 1px solid $color__border-input;
+		}
   }
   input#mc-embedded-subscribe {
     width: 16%;
-		@include breakpoint(tablet) {width: 25%;}
-		@include breakpoint(tablet) {width: 35%;}
-    @include font-size(1);
+		@include font-size(1);
     color: $color__text-input;
     border-color: $color__text-input;
+		@include breakpoint(tablet) {width: 25%;}
+		@include breakpoint(mobile) {
+			width: 100%;
+			background: $color__text-input;
+      color: #FFF;
+		}
+
     &:hover {
       background: $color__text-input;
       color: #FFF;
@@ -215,6 +263,10 @@ header#masthead {
     text-align: center;
     margin-bottom: 2em;
     @include breakpoint(tablet) {width: 50%;}
+		@include breakpoint(mobile) {
+			width: 100%;
+			float: none;
+		}
     img {
       width: 280px;
       height: 280px;
@@ -223,9 +275,9 @@ header#masthead {
       margin: 0 auto 1em auto;
       transition: opacity 200ms;
       &:hover {opacity: 0.8}
-      @include breakpoint(mobile) {
-        width: 150px;
-        height: 150px;
+      @include breakpoint(tablet) {
+        width: 200px;
+				height: 200px;
       }
     }
   }

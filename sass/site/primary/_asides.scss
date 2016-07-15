@@ -39,11 +39,24 @@ form.searchandfilter {
     border-radius: 0;
     padding: 10px 30px 10px 20px;
     display: block;
+		@include breakpoint(mobile) {width: 100%}
     option {
       text-transform: capitalize;
     }
   }
-  li {position: relative}
+	ul {@include breakpoint(mobile) {
+		display: block;
+		margin: 0.5em auto 0 auto;
+		padding: 0;
+		width: 90%;
+	}}
+  li {
+		position: relative;
+		@include breakpoint(mobile) {
+			display: block;
+			width: 100%;
+		}
+	}
   li:after {
     font-family: 'icomoon' !important;
     content: "\e907";
@@ -57,6 +70,10 @@ form.searchandfilter {
   li:last-child input {
     position: relative;
     top: -1px;
+		@include breakpoint(mobile) {
+			position: static;
+			width: 100%;
+		}
   }
 }
 

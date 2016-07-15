@@ -10,6 +10,9 @@
 ?>
 
 <article id="feature-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url(<?php echo $thumb_url[0]; ?>)">
+	<div class="holds-mobile-image">
+		<img src="<?php echo $thumb_url[0]; ?>">
+	</div>
 	<div class="entry-content home-feature">
     <h2><?php the_title() ?></h2>
     <p><?php echo rwmb_meta('homepage_copy'); ?></p>

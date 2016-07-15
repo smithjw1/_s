@@ -44,7 +44,7 @@ get_header(); ?>
             <div class="mc-field-group">
               <label for="mce-EMAIL">Sign up to receive email updates</label>
               <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address">
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button">
             </div>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display:none"></div>
