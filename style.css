@@ -960,6 +960,10 @@ div.holds-search {
     .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
       max-width: 90%; } }
 
+.single .hentry ul {
+  position: relative;
+  left: 5%; }
+
 .single .hentry .youtube-embed {
   margin: 1em 5%;
   position: relative;
