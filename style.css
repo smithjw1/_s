@@ -287,21 +287,37 @@ h1 {
   margin-top: 0.3em;
   line-height: 1.16em;
   text-align: center; }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 40px;
+      font-size: 2rem; } }
 
 h2 {
   font-size: 38px;
   font-size: 1.9rem;
   line-height: 1.21em; }
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 30.4px;
+      font-size: 1.52rem; } }
 
 h3 {
   font-size: 30px;
   font-size: 1.5rem;
   line-height: 1.27em; }
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 24px;
+      font-size: 1.2rem; } }
 
 h4 {
   font-size: 22px;
   font-size: 1.1rem;
   line-height: 1.36em; }
+  @media (max-width: 480px) {
+    h4 {
+      font-size: 20px;
+      font-size: 1rem; } }
 
 h5 {
   font-size: 18px;
@@ -848,8 +864,8 @@ div.holds-search {
       font-size: 28px;
       font-size: 1.4rem; }
     div.holds-search form button {
-      font-size: 42px;
-      font-size: 2.1rem; }
+      font-size: 28px;
+      font-size: 1.4rem; }
   div.holds-search a.close-search {
     position: absolute;
     top: 11%;
@@ -955,38 +971,51 @@ div.holds-search {
   .holds-article {
     margin-top: -50px; } }
 
-.single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
+.single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content, .on-page .hentry p, .on-page .hentry ul, .on-page .hentry ol, .on-page .hentry h1, .on-page .hentry h2, .on-page .hentry h3, .on-page .hentry h4, .on-page .hentry h5, .on-page .hentry h6, .on-page .hentry footer, .on-page .hentry .page-content {
   margin-left: auto;
   margin-right: auto;
   max-width: 690px;
   padding: 0 30px; }
   @media (max-width: 1000px) {
-    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
+    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content, .on-page .hentry p, .on-page .hentry ul, .on-page .hentry ol, .on-page .hentry h1, .on-page .hentry h2, .on-page .hentry h3, .on-page .hentry h4, .on-page .hentry h5, .on-page .hentry h6, .on-page .hentry footer, .on-page .hentry .page-content {
       max-width: 670px;
       padding: 0 20px; } }
   @media (max-width: 480px) {
-    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content {
-      max-width: 90%; } }
+    .single .hentry p, .single .hentry ul, .single .hentry ol, .single .hentry h1, .single .hentry h2, .single .hentry h3, .single .hentry h4, .single .hentry h5, .single .hentry h6, .single .hentry footer, .single .hentry .page-content, .on-page .hentry p, .on-page .hentry ul, .on-page .hentry ol, .on-page .hentry h1, .on-page .hentry h2, .on-page .hentry h3, .on-page .hentry h4, .on-page .hentry h5, .on-page .hentry h6, .on-page .hentry footer, .on-page .hentry .page-content {
+      max-width: 90%;
+      padding: 0; } }
 
-.single .hentry ul, .single .hentry ol {
+.single .hentry ul, .single .hentry ol, .on-page .hentry ul, .on-page .hentry ol {
   position: relative;
   left: 5%; }
 
-.single .hentry .youtube-embed {
+.single .hentry .alignright, .on-page .hentry .alignright {
+  margin-right: 30px; }
+
+.single .hentry .alignleft, .on-page .hentry .alignleft {
+  margin-left: 30px; }
+
+.single .hentry p .alignright, .on-page .hentry p .alignright {
+  margin-right: 0; }
+
+.single .hentry p .alignleft, .on-page .hentry p .alignleft {
+  margin-left: 0; }
+
+.single .hentry .youtube-embed, .on-page .hentry .youtube-embed {
   margin: 1em 5%;
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
   padding-top: 25px;
   height: 0; }
-  .single .hentry .youtube-embed iframe {
+  .single .hentry .youtube-embed iframe, .on-page .hentry .youtube-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100% !important;
     height: 100% !important; }
 
-.single .hentry .alignnone {
+.single .hentry .alignnone, .on-page .hentry .alignnone {
   width: 90%;
   margin: 1em 0 1em 5%; }
 
@@ -1066,7 +1095,7 @@ span.social-links {
     .entry-content blockquote,
     .entry-summary blockquote {
       float: none;
-      width: 100%;
+      width: 90%;
       margin-top: 0; } }
   .page-content blockquote p,
   .entry-content blockquote p,
@@ -1227,8 +1256,8 @@ form.searchandfilter {
   .search-form button {
     display: block;
     width: 10%;
-    font-size: 30px;
-    font-size: 1.5rem;
+    font-size: 20px;
+    font-size: 1rem;
     color: #a4a4a4;
     border-color: #a4a4a4; }
     @media (max-width: 1000px) {

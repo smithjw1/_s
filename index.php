@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area<?php if(is_page() && !is_front_page()) echo ' on-page';?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php

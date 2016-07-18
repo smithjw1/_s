@@ -17,7 +17,7 @@
     <h2><?php the_title() ?></h2>
     <p><?php echo rwmb_meta('homepage_copy'); ?></p>
     <a href="<?php the_permalink()?>" class="button">Read More</a>
-      <?php piketopine_posted_on(); ?>
+    <p class="post-meta"><?php piketopine_posted_on(); ?></p>
 	</div><!-- .entry-content -->
   <div class="shade"></div>
 </article><!-- #post-## -->

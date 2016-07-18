@@ -95,7 +95,7 @@ form.searchandfilter {
     display: block;
     width: 10%;
 		@include breakpoint(tablet) {width: 25%;}
-    @include font-size(1.5);
+    @include font-size(1);
     color: $color__text-input;
     border-color: $color__text-input;
     &:hover {
