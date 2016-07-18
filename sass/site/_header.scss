@@ -8,6 +8,7 @@ header#masthead {
   height: 100px;
   padding-top: 30px;
   padding-left: 30px;
+	@include breakpoint(tablet) {padding-left:0}
   .site-branding {
     width: 200px;
     position: static;
