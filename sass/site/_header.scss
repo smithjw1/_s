@@ -17,6 +17,7 @@ header#masthead {
       position: static;
       float: none;
       margin: 0 auto;
+			width: 150px;
     }
   }
   a.show-search {
@@ -29,6 +30,10 @@ header#masthead {
 		@include breakpoint(mobile) {
 			border: none;
 			width: auto;
+			position: absolute;
+			float: none;
+			top: 25px;
+			right: 10px;
 		}
   }
   a.show-search:after {
@@ -61,7 +66,7 @@ header#masthead {
       top: 1px;
     }
     @include breakpoint(tablet) {
-      margin-left: 0;
+      margin-left: 3%;
       position: relative;
       top: 240px;
     }

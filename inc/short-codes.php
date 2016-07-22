@@ -7,7 +7,7 @@ function vwh_short_intro( $atts , $content = null){
 
 add_shortcode( 'tweet-this', 'vwh_short_tweetThis' );
 function vwh_short_tweetThis( $atts , $content = null){
-  $pageURL = urlencode(get_permalink());
+  $pageURL = urlencode(wpbitly_get_shortlink(get_permalink(),get_the_id()));
   $tweet = urlencode($content);
   $tweetLink = '<a target="_blank" href="https://twitter.com/intent/tweet?via=piketopine&text='.$tweet.'&url='.$pageURL.'"><span class="icon-twitter"></span> Tweet This</a>';
 	return '<blockquote class="tweet-this">' . $content . $tweetLink . '</blockquote>';

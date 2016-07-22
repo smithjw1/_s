@@ -711,7 +711,8 @@ header#masthead {
       header#masthead .site-branding {
         position: static;
         float: none;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        width: 150px; } }
   header#masthead a.show-search {
     float: right;
     margin-right: 1%;
@@ -722,7 +723,11 @@ header#masthead {
     @media (max-width: 480px) {
       header#masthead a.show-search {
         border: none;
-        width: auto; } }
+        width: auto;
+        position: absolute;
+        float: none;
+        top: 25px;
+        right: 10px; } }
   header#masthead a.show-search:after {
     content: "\e902";
     font-family: 'icomoon';
@@ -755,7 +760,7 @@ header#masthead {
       top: 1px; }
     @media (max-width: 1000px) {
       header#masthead a.back {
-        margin-left: 0;
+        margin-left: 3%;
         position: relative;
         top: 240px; } }
     @media (max-width: 480px) {
@@ -1125,7 +1130,7 @@ span.social-links {
       width: 100%;
       height: 300px;
       top: -100px;
-      min-height: auto; } }
+      min-height: 0; } }
   @media (max-width: 480px) {
     .post-photo {
       height: 250px; } }

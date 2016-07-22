@@ -103,8 +103,8 @@ add_action( 'after_setup_theme', 'piketopine_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function piketopine_scripts() {
-  wp_enqueue_style( 'piketopine-style', get_template_directory_uri() . '/style.min.css', array(), '1.0.5');
-  wp_enqueue_script ('piketopine-script', get_template_directory_uri() . '/js/dist/scripts.min.js',array(), '1.0.5', true);
+  wp_enqueue_style( 'piketopine-style', get_template_directory_uri() . '/style.min.css', array(), '1.0.7');
+  wp_enqueue_script ('piketopine-script', get_template_directory_uri() . '/js/dist/scripts.min.js',array(), '1.0.7', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
